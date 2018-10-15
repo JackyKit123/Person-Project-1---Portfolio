@@ -79,7 +79,7 @@ document.getElementById().style.width = "0";
 
 [x] Edit the album making it resize according to window size
 
-[ ] To be added
+[ ] Add a toggler for particle background to improve performance
 
 ---
 
