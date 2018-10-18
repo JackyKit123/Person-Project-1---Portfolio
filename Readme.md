@@ -1,5 +1,5 @@
 # A Readme for Jacky's Page 
-## Version 1.1.0
+## Version 1.1.1
 
 ---
 Table of contents
@@ -20,6 +20,12 @@ This is a webpage created by Jacky, contents mainly include personal information
 
 ### What's New
 
+#### Version 1.1.1
+
+- Reduce particle amount in the background
+- Edited the Enter button at the homepage to resize according to screen size
+
+#### Version 1.1.0
 - Edited site to be mobile friendly
 - repeated code is minimized, length of most original code has been reduced twice even threefold
 - seperated multiple .js and .css for better file and code structure organizing
@@ -75,11 +81,9 @@ document.getElementById().style.width = "0";
 
 ### Todo
 
-[x] Enhance the album slideshow to be animated
+[?] Add a toggler for particle background to improve performance
 
-[x] Edit the album making it resize according to window size
-
-[ ] Add a toggler for particle background to improve performance
+[ ] Toggle particle overlay according to user's computer performance
 
 ---
 
