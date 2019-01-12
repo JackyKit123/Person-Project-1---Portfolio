@@ -1,0 +1,47 @@
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#aboutp {
+    display:flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    height:100%;
+}
+
+#mainpage-flex-container1 {
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height:100%;
+}
+
+#mainpage-flex-container2 {
+    margin-top:100px;
+    margin-bottom:100px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    align-items: center;
+    height: 100%;
+}
+
+.mainpage-buttons {
+    margin: auto;
+    font-size:30px;
+}
+
+#aboutmepic {
+    display:block;
+    margin:auto;
+    width:250px;
+    height:400px;
+}
+
+@media only screen and (max-width: 900px) {
+    #aboutp {
+        flex-direction:column;
+    }
+}
