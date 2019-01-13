@@ -2,6 +2,7 @@ import * as React from 'react';
 import Particles from 'react-particles-js';
 import './index.css'
 
+// tslint:disable:object-literal-sort-keys
 export default class extends React.Component {
     public render() {
         return <Particles params={{

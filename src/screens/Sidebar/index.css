@@ -1,3 +1,14 @@
+header {
+    background-color: #242424;
+    font-family: Arial;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 40px;
+    color: white;
+    font-weight: 700;
+}
+
 #sidebar-pusher {
     content: "";
     height: 0;
@@ -6,12 +17,12 @@
 
 #closebtn {
     text-align: center;
-    z-index:2;
-    padding:8px 12px 8px 12px !important;
+    z-index: 2;
+    padding: 8px 12px 8px 12px !important;
     position: absolute;
     top: 0;
-    right:25px; 
-    margin-left:50px;
+    right: 25px;
+    margin-left: 50px;
 }
 
 #sidenav {

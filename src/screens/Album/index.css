@@ -20,7 +20,6 @@
 	border-style: outset;
 	border: 10px outset;
 	margin: 10px auto;
-	border-image: linear-gradient(to center, aqua 0%, white 100%);
 	border-image-slice: 1;
 }
 
@@ -63,7 +62,7 @@
 }
 
 .album-prev-next {
-	z-index: 100;
+	z-index: 1;
 	width: 56px;
 	height: 58px;
 }
@@ -92,11 +91,11 @@
 }
 
 #return-to-album {
-	display:block;
+	display: block;
 	align-self: center;
-	width:60px;
-	height:60px;
-	margin:auto;
+	width: 60px;
+	height: 60px;
+	margin: auto;
 }
 
 #return-to-album:hover {
@@ -105,24 +104,21 @@
 
 @keyframes shaky-rotate {
 	0% {
-	  transform: rotate(0deg);
+		transform: rotate(0deg);
 	}
 	50% {
-	  transform: rotate(360deg);
+		transform: rotate(360deg);
 	}
 	55%, 95% {
-	  transform: translate3d(-1px, 0, 0);
+		transform: translate3d(-1px, 0, 0);
 	}
-	
 	60%, 90% {
-	  transform: translate3d(2px, 0, 0);
+		transform: translate3d(2px, 0, 0);
 	}
-  
 	65%, 75%, 85% {
-	  transform: translate3d(-4px, 0, 0);
+		transform: translate3d(-4px, 0, 0);
 	}
-  
 	70%, 80% {
-	  transform: translate3d(4px, 0, 0);
+		transform: translate3d(4px, 0, 0);
 	}
-  }
+}

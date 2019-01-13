@@ -1,15 +1,16 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
+import Background from '../Background/App';
+import Particle from '../Particle/App'
+import Sidebar from '../Sidebar/App'
+import Trail from '../Trail/App'
 import './index.css';
 import selfie from './selfie.jpeg';
-import Particle from '../Particle/App'
-import Trail from '../Trail/App'
-import Sidebar from '../Sidebar/App'
 
 export default class extends React.Component {
     public render() {
         return (
-            <>
+            <Background>
                 <Particle />
                 <Sidebar />
                 <section id="about" className="sidebarMoveable  content">
@@ -34,7 +35,7 @@ export default class extends React.Component {
                     </div>
                 </section>
                 <Trail />
-            </>
+            </Background>
         )
     }
 } 

@@ -14,7 +14,7 @@ export default class extends React.Component {
         const fill: number[] = Array(12).fill(1)
         return (
             <BrowserView>
-                <div>
+                <div id='particle-overlay'>
                     {fill.map((el: number, i: number) => {
                         return <div key={"trail-" + i} className="mouseTrail" id={'mouseTrail' + i}>&#9733;</div>
                     })}
@@ -31,17 +31,23 @@ export default class extends React.Component {
         window.removeEventListener('mousemove', this.mouseMove)
     }
 
-    private mouseMove(evt: MouseEvent) {
-
-        const
-            mouseX = evt.clientX,
-            mouseY = evt.clientY
+    private mouseMove(evt: any) {
+        // tslint:disable
+        const mouseX = evt.clientX
+        const mouseY = evt.clientY - 10
         const printDot = (i: number) => {
             const dot = document.getElementById('mouseTrail' + i)
             if (dot) {
                 dot.style.left = String(mouseX + 'px')
                 dot.style.top = String(mouseY + 'px')
                 dot.style.opacity = String(1 / i)
+                if (/pointer/g.test(evt.target.className) || evt.target.tagName === 'A') {
+                    dot.style.color = 'yellow'
+                    dot.style.fontSize = '25px'
+                } else {
+                    dot.style.color = 'white'
+                    dot.style.fontSize = '15px'
+                }
                 if (i < 12) {
                     setTimeout(() => printDot(i + 1), 30)
                 }
@@ -52,7 +58,7 @@ export default class extends React.Component {
             this.rotateStars()
         }
     }
-
+    
     private rotateStars() {
         const rotate = (rotation: number = 0) => {
             for (let i: number = 0; i < 12; i++) {

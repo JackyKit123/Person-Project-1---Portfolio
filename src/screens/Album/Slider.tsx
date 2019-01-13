@@ -1,6 +1,7 @@
+import * as $ from 'jquery';
 import * as React from 'react';
-import $ from 'jquery';
 import { Link } from 'react-router-dom';
+import Background from '../Background/App'
 import Particle from '../Particle/App';
 import Sidebar from '../Sidebar/App';
 import Trail from '../Trail/App';
@@ -16,18 +17,18 @@ export default class extends React.Component<IAlbumProps> {
     }
     public render() {
         return (
-            <>
+            <Background>
                 <Particle />
                 <Sidebar />
                 <div id='particle-overlay'>
-                    <section id="album_container">
-                        <div className="slider-title"><span>{this.props.title}</span></div>
+                    <section id="album_container" className="sidebarMoveable">
+                        <div className="slider-title"><span style={	{borderImage: "linear-gradient(to center, aqua 0%, white 100%)"}}>{this.props.title}</span></div>
                         <div className="slider-outer">
-                            <div className="album-prev-next">
+                            <div className="album-prev-next pointer">
                                 <img onClick={this.prev} src="/images/albums/arrow-left.png" className="prev pointer" alt="Prev" />
                             </div>
                             {this.props.album}
-                            <div className="album-prev-next">
+                            <div className="album-prev-next pointer">
                                 <img onClick={this.next} src="/images/albums/arrow-right.png" className="next pointer" alt="Next" />
                             </div>
                         </div>
@@ -37,7 +38,7 @@ export default class extends React.Component<IAlbumProps> {
                     </section>
                 </div>
                 <Trail />
-            </>
+            </Background>
         )
     }
 
@@ -45,41 +46,30 @@ export default class extends React.Component<IAlbumProps> {
         const currentImg = $('.active-album-img');
         let nextImg: JQuery<HTMLElement> = currentImg.next();
 
-        if (!nextImg.length) {
-            nextImg = $(".first-album-img")
-        }
-        nextImg.addClass('active-album-img')
-        currentImg.css({
-            "zIndex": "2"
-        }).fadeOut({
-            queue: false, duration: 1000
-        }).animate({
-            'padding-top': "520px"
-        }, 1000, function () {
-            currentImg.css({
+        (!nextImg.length) ?
+            nextImg = $(".first-album-img") : nextImg.addClass('active-album-img')
+        currentImg
+            .css({ "zIndex": "2" })
+            .fadeOut({ duration: 1000, queue: false })
+            .animate({
+                'padding-top': "520px"
+            }, 1000, () => currentImg.css({
                 "padding-top": "0",
                 "zIndex": "0"
-            }).removeClass('active-album-img')
-        })
+            }).removeClass('active-album-img'))
     }
 
     private prev() {
         const currentImg = $('.active-album-img');
         let prevImg: JQuery<HTMLElement> = currentImg.prev();
 
-        if (!prevImg.length) {
-            prevImg = $(".last-album-img")
-        }
-        prevImg.addClass('active-album-img').css({
-            "zIndex": "2",
-            "padding-top": "520px"
-        }).fadeIn({
-            queue: false, duration: 1000
-        }).animate({
-            'padding-top': "0",
-            "zIndex": "0"
-        }, 1000, function () {
-            currentImg.removeClass('active-album-img')
-        })
+        (!prevImg.length) ?
+            prevImg = $(".last-album-img") :
+            prevImg.addClass('active-album-img')
+                .css({ "padding-top": "520px", "zIndex": "2", })
+                .fadeIn({ duration: 1000, queue: false })
+                .animate({
+                    'padding-top': "0", "zIndex": "0"
+                }, 1000, () => currentImg.removeClass('active-album-img'))
     }
 }

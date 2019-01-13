@@ -1,13 +1,14 @@
 import * as React from 'react'
-import './index.css'
+import Background from '../Background/App';
 import Particle from '../Particle/App';
 import Sidebar from '../Sidebar/App';
 import Trail from '../Trail/App';
+import './index.css'
 
 export default class extends React.Component {
     public render() {
         return (
-            <>
+            <Background>
                 <Particle />
                 <Sidebar />
                 <section id='particle-overlay'>
@@ -44,7 +45,7 @@ export default class extends React.Component {
                     </section>
                 </section>
                 <Trail />
-            </>
+            </Background>
         )
     }
 }

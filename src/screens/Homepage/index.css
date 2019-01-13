@@ -1,3 +1,7 @@
+#splashscreen_container {
+    height: stretch;
+}
+
 #splashscreen {
     font-family: "Comic Sans MS", Arial;
     font-style: oblique;

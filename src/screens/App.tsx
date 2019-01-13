@@ -5,36 +5,36 @@ import {
   Switch,
 } from 'react-router-dom'
 import 'reset-css'
-import './index.css'
-import './Pure-Css3-Animated-Border.css'
-import Homepage from './Homepage/App'
-import About from './About/App'
-import Album from './Album/App'
-import Hobbies from './Hobbies/App'
 import NoMatch from './404/App'
-import USTrip from './Album/albums/US-trip';
+import About from './About/App'
 import EUTrip from './Album/albums/EU-trip';
 import Pet from './Album/albums/Pet';
 import StarGaze from './Album/albums/StarGaze';
+import USTrip from './Album/albums/US-trip';
+import Album from './Album/App'
 import Contact from './Contact/App';
+import Hobbies from './Hobbies/App'
+import Homepage from './Homepage/App'
+import './index.css'
 import Project from './Project/App';
+import './Pure-Css3-Animated-Border.css'
 
 export default class extends React.Component {
-  render() {
+  public render() {
     return (
       <Router>
         <Switch>
-          <Route exact={true} path="/" component={Homepage} />
-          <Route path="/about" component={About} />
-          <Route path="/hobbies" component={Hobbies} />
-          <Route exact={true} path="/album" component={Album} />
-          <Route path="/album/us-trip" component={USTrip} />
-          <Route path="/album/eu-trip" component={EUTrip} />
-          <Route path="/album/pet" component={Pet} />
-          <Route path="/album/gazing" component={StarGaze} />
-          <Route path="/contact" component={Contact} />
-          <Route exact={true} path="/projects" component={Project} />
-          <Route component={NoMatch} />
+            <Route exact={true} path="/" component={Homepage} />
+            <Route path="/about" component={About} />
+            <Route path="/hobbies" component={Hobbies} />
+            <Route exact={true} path="/album" component={Album} />
+            <Route path="/album/us-trip" component={USTrip} />
+            <Route path="/album/eu-trip" component={EUTrip} />
+            <Route path="/album/pet" component={Pet} />
+            <Route path="/album/gazing" component={StarGaze} />
+            <Route path="/contact" component={Contact} />
+            <Route exact={true} path="/projects" component={Project} />
+            <Route component={NoMatch} />
         </Switch>
       </Router>
     );

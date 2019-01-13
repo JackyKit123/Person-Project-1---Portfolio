@@ -1,0 +1,14 @@
+#background {
+    cursor: none;
+    margin: 0;
+    position: absolute;
+    min-height: 100%;
+    width: 100%;
+    font: normal 75% Arial, Helvetica, sans-serif;
+    background: url('/images/background.gif') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-size: 40px;
+}

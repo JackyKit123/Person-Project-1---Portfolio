@@ -2,5 +2,6 @@
     position: fixed;
     color: rgb(255,255,255);
     font-size: 15px;
+    z-index: 999;
     pointer-events: none;
 }
