@@ -4,7 +4,7 @@ import Slider from '../Slider'
 export default class extends React.Component {
     public render() {
         return (
-            <Slider title="US Trip" album={(
+            <Slider title="Star Gazing" album={(
                 <div className="slider-inner" id="star-slider">
                     <img className="active-album-img first-album-img" src="/images/albums/Stars/P7115838.png" />
                     <img src="/images/albums/Stars/P7115839.png" />

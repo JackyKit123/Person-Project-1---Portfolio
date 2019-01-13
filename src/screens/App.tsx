@@ -31,7 +31,7 @@ export default class extends React.Component {
             <Route path="/album/us-trip" component={USTrip} />
             <Route path="/album/eu-trip" component={EUTrip} />
             <Route path="/album/pet" component={Pet} />
-            <Route path="/album/gazing" component={StarGaze} />
+            <Route path="/album/star-gazing" component={StarGaze} />
             <Route path="/contact" component={Contact} />
             <Route exact={true} path="/projects" component={Project} />
             <Route component={NoMatch} />
