@@ -1,16 +1,38 @@
 import * as React from 'react';
 import Particles from 'react-particles-js';
 import './index.css'
+// tslint:disable:no-console
+interface IfpsState {
+    particles: number
+}
 
 // tslint:disable:object-literal-sort-keys
-export default class extends React.Component {
+export default class extends React.Component<{}, IfpsState> {
+    private mounted: boolean = true
+    constructor(props: {}) {
+        super(props)
+        this.state = ({
+            particles: 100
+        })
+    }
+
+    public componentWillMount() {
+        this.checkPerformance();
+        this.configParticleAmount();
+    }
+
+    public componentWillUnmount() {
+        this.mounted = false
+    }
+
     public render() {
-        return <Particles params={{
+        return <div id='particle-js'><Particles params={{
+            fps_limit: 60,
             particles: {
                 number: {
-                    value: 80,
+                    value: this.state.particles,
                     density: {
-                        enable: true, value_area: 394.57382081613633
+                        enable: false, value_area: 394.57382081613633
                     }
                 },
                 color: {
@@ -112,5 +134,55 @@ export default class extends React.Component {
             },
             retina_detect: true
         }} />
+        </div>
+    }
+
+    private checkPerformance() {
+        const requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame;
+        let lastTimestamp: number = 0
+        let overallDelay: number = 0
+        let requestedChecks: number = 0
+        const check = (timestamp: number) => {
+            const extraMillisecondDelay = timestamp - lastTimestamp
+            lastTimestamp = timestamp
+            requestedChecks = requestedChecks + 1
+            if (requestedChecks > 5) {
+                overallDelay = overallDelay + extraMillisecondDelay
+            }
+            if (requestedChecks % 10 === 0) {
+                const averageDelay = overallDelay / (requestedChecks - 5) - 1000
+                const particleJSconfig = {
+                    averageDelay,
+                    particleAmount: this.state.particles
+                }
+                localStorage.setItem('particleJS', JSON.stringify(particleJSconfig))
+            }
+            if (this.mounted) {
+                setTimeout(() => requestAnimationFrame(check), 1000)
+            }
+        }
+        requestAnimationFrame(check)
+    }
+
+    private configParticleAmount() {
+        const get = localStorage.getItem('particleJS');
+        if (get) {
+            const particleJSconfig = JSON.parse(get);
+            switch (true) {
+                case particleJSconfig.averageDelay < 20 && particleJSconfig.particleAmount < 500:
+                    this.setState({ particles: particleJSconfig.particleAmount + 50 })
+                    break
+                case particleJSconfig.averageDelay <= 40:
+                    this.setState({ particles: particleJSconfig.particleAmount })
+                    break
+                case particleJSconfig.averageDelay >= 80:
+                    this.setState({ particles: particleJSconfig.particleAmount - 100 })
+                    break;
+                case particleJSconfig.averageDelay > 40:
+                    this.setState({ particles: particleJSconfig.particleAmount - 50 })
+                    break
+
+            }
+        }
     }
 }
