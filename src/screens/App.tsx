@@ -15,9 +15,10 @@ import Album from './Album/App'
 import Contact from './Contact/App';
 import Hobbies from './Hobbies/App'
 import Homepage from './Homepage/App'
-import './index.css'
 import Project from './Project/App';
 import './Pure-Css3-Animated-Border.css'
+
+import './index.css'
 
 export default class extends React.Component {
   public render() {
@@ -33,7 +34,7 @@ export default class extends React.Component {
             <Route path="/album/pet" component={Pet} />
             <Route path="/album/star-gazing" component={StarGaze} />
             <Route path="/contact" component={Contact} />
-            <Route exact={true} path="/projects" component={Project} />
+            <Route path="/projects" component={Project} />
             <Route component={NoMatch} />
         </Switch>
       </Router>

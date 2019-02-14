@@ -32,7 +32,6 @@ export default class extends React.Component {
     }
 
     private mouseMove(evt: any) {
-        // tslint:disable
         const mouseX = evt.clientX
         const mouseY = evt.clientY - 10
         const printDot = (i: number) => {

@@ -82,10 +82,38 @@
     background-color: #2F3136;
 }
 
+#Github{
+	background-image: url("/images/icons/Github.png");
+	background-color: white;
+	background-size: 50px 50px;
+}
+#Github:hover > #Githubsub{
+    bottom:0;
+}
+#Githubsub {
+    background-color: white
+}
+
+#LinkedIn{
+	background-image: url("/images/icons/LinkedIn.png");
+	background-color: #0077B5;
+	background-size: 50px 50px;
+}
+#LinkedIn:hover > #LinkedInsub{
+    bottom:0;
+}
+#LinkedInsub {
+    background-color:#0077B5
+}
+
 #Facebook a {
 	color:white;
 }
 
 #Discord a {
 	color: white;
+}
+
+#Github a {
+    color: blue;
 }

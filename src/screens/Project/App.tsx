@@ -14,22 +14,24 @@ export default class extends React.Component {
                 <section id="project" className="sidebarMoveable content">
                     <h1 className="titles">My Projects</h1>
                     <div id="projectp" className="content-container">
-                        <div className="projects" id="flower-shop">
-                            <a href="project/flower-shop" target="_blank">
-                                <img src="images/project/flower-shop.png" />
-                                <div className="project-name">A flower shop website, what do you expect?</div>
+                        <div className="projects" title="No Preview available">
+                            <img src="images/project/tic-tac-toe.jpg" />
+                            <div className="project-name">A JavaScript Based TicTacToe Game</div>
+                        </div>
+                        <div className="projects" title="No Preview available">
+                            <img src="images/project/only_bootstrap_page.png" />
+                            <div className="project-name">Just like every bootstrap site ever</div>
+                        </div>
+                        <div className="projects">
+                            <a href="http://draw-it.surge.sh">
+                                <img className="pointer" src="images/project/painting.png" />
+                                <div className="project-name pointer">A Painting Web App</div>
                             </a>
                         </div>
-                        <div className="projects" id="bootstrap-site">
-                            <a href="project/bootstrap-site" target="_blank">
-                                <img src="images/project/only_bootstrap_page.png" />
-                                <div className="project-name">Just like every boostrap site ever</div>
-                            </a>
-                        </div>
-                        <div className="projects" id="tic-tac-toe">
-                            <a href="project/tic-tac-toe" target="_blank">
-                                <img src="images/project/tic-tac-toe.jpg" />
-                                <div className="project-name">A javascript based tic tac toe game</div>
+                        <div className="projects">
+                            <a href="https://trade4goods.xyz">
+                                <img className="pointer" src="images/project/trade4goods.png" />
+                                <div className="project-name pointer">Trade4Goods - An Online Barter Platform</div>
                             </a>
                         </div>
                     </div>

@@ -11,7 +11,6 @@ export default class extends React.Component {
             <Background>
                 <Particle />
                 <Sidebar />
-                <section id='particle-overlay'>
                     <section id="contact" className="sidebarMoveable content">
                         <h1 className="titles">Contact Me</h1>
                         <div id="contactp" className="content-container">
@@ -19,6 +18,11 @@ export default class extends React.Component {
 					<div id="Email" className="contact-icons">
                                 <div id="Emailsub" className="contact-icons-sub">
                                     <a href="mailto:jackykit19970402@gmail.com">jackykit19970402@gmail.com</a>
+                                </div>
+                            </div>
+                            <div id="Github" className="contact-icons">
+                                <div id="Githubsub" className="contact-icons-sub">
+                                    <a href="https://github.com/JackyKit123" target="_blank">github.com/JackyKit123</a>
                                 </div>
                             </div>
                             <div id="Facebook" className="contact-icons">
@@ -41,9 +45,13 @@ export default class extends React.Component {
                                     <a href="https://discord.me/jackykit" target="_blank">discord.me/jackykit</a>
                                 </div>
                             </div>
+                            <div id="LinkedIn" className="contact-icons">
+                                <div id="LinkedInsub" className="contact-icons-sub">
+                                    <a href="https://github.com/JackyKit123" target="_blank">github.com/JackyKit123</a>
+                                </div>
+                            </div>
                         </div>
                     </section>
-                </section>
                 <Trail />
             </Background>
         )

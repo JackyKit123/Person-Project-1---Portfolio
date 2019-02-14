@@ -17,7 +17,7 @@ export default class extends React.Component {
                     <h1 className="titles">About Me</h1>
                     <div id="aboutp" className="content-container">
                         <div><img id="aboutmepic" src={selfie} alt="My Selfie" /></div>
-                        <div id="mainpage-flex-container1">I am Jacky, a boy passionated in computer engineering. Welcome to my webpage,
+                        <div id="mainpage-flex-container1">I am Jacky, a boy passionate in computer engineering. Welcome to my webpage,
                             in this webpage, you can get to know my hobbies and view some of my photos as well as seeing the projects that I
                             participated in. Click below to visit them.
 						<div id="mainpage-flex-container2">
