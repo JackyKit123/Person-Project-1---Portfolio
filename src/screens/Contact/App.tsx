@@ -22,7 +22,7 @@ export default class extends React.Component {
                             </div>
                             <div id="Github" className="contact-icons">
                                 <div id="Githubsub" className="contact-icons-sub">
-                                    <a href="https://github.com/JackyKit123" target="_blank">github.com/JackyKit123</a>
+                                    <a href="https://github.com/JackyKit123" target="_blank">JackyKit123</a>
                                 </div>
                             </div>
                             <div id="Facebook" className="contact-icons">
@@ -47,7 +47,7 @@ export default class extends React.Component {
                             </div>
                             <div id="LinkedIn" className="contact-icons">
                                 <div id="LinkedInsub" className="contact-icons-sub">
-                                    <a href="https://github.com/JackyKit123" target="_blank">github.com/JackyKit123</a>
+                                    <a href="https://www.linkedin.com/in/chan-chun-kit-a0417b17b/" target="_blank">Chan Chun Kit</a>
                                 </div>
                             </div>
                         </div>
