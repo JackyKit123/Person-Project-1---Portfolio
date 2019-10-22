@@ -33,7 +33,7 @@ export default class extends React.Component<IHistory> {
 
     public async componentWillMount() {
         try {
-            const res = await axios.get('/shortUrl');
+            const res = await axios.get(`${window.location.host}/shortUrl`);
             const urlPair = res.data.find((list: {origin: string, name: string}) => `/${list.name}` === window.location.pathname);
             if (urlPair) {
                 window.location.replace(
