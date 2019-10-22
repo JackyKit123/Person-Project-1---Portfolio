@@ -1,3 +1,4 @@
+import axios from 'axios';
 import * as History from "history";
 import * as React from 'react';
 import Background from '../Background/App';
@@ -28,6 +29,21 @@ export default class extends React.Component<IHistory> {
                 <Trail />
             </Background>
         )
+    }
+
+    public async componentWillMount() {
+        try {
+            const res = await axios.get('/shortUrl');
+            const urlPair = res.data.find((list: {origin: string, name: string}) => `/${list.name}` === window.location.pathname);
+            if (urlPair) {
+                window.location.replace(
+                    urlPair.origin.match(/^http/) ? 
+                    urlPair.origin : `//${urlPair.origin}`
+                );
+            }
+        } catch(err) {
+            throw err;
+        }
     }
 
     private goBack() {
